@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #00090c;
+  padding-top: calc((100vh - (60vw * 0.7)) / 2);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -27,19 +32,30 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: calc(60vw - 10px);
-  height: calc((60vw - 10px) / 100 * 70.33);
+  width: 60vw;
+  height: calc(60vw * 0.7);
   background-image: url(./map.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
+  border: 3px solid #011d24;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.moving__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .iss {
-  width: 50px;
-  height: 26px;
+  width: calc((100vw + 20vh) / 30);
+  height: calc((100vw + 20vh) / 60);
   background-image: url(./iss.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
   background-position: center;
   animation: iss-animation 3s linear infinite;
 }
@@ -50,4 +66,16 @@
   50% {transform: rotate(0deg);}
   75% {transform: rotate(-5deg);}
   100% {transform: rotate(0deg);}
+}
+
+@media (max-width: 999.99px) {
+
+  body {
+    padding-top: calc((100vh - (95vw * 0.7)) / 2);
+  }
+
+  .map {
+    width: 95vw;
+    height: calc(95vw * 0.7);
+  }
 }
