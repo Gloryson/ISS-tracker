@@ -23,9 +23,31 @@
 }
 
 .map {
-  width: 100%;
-  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: calc(60vw - 10px);
+  height: calc((60vw - 10px) / 100 * 70.33);
   background-image: url(./map.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.iss {
+  width: 50px;
+  height: 26px;
+  background-image: url(./iss.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  animation: iss-animation 3s linear infinite;
+}
+
+@keyframes iss-animation {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(5deg);}
+  50% {transform: rotate(0deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
 }
